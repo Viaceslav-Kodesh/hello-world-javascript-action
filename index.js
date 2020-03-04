@@ -4,12 +4,6 @@ import OpenStack from 'js-openstack-lib';
 
 const exec = require('@actions/exec');
 
-// Initialize cloud
-// cloudConfig is a JSON object corresponding to clouds.yaml
-// (It is your responsibility to load and parse it)
-
-
-
 async function openstackConnect() {
     const userName = core.getInput('OS_USERNAME');
     const authUrl = core.getInput('OS_AUTH_URL');
@@ -20,7 +14,7 @@ async function openstackConnect() {
     const clusterName = core.getInput('CLUSTER_NAME');
 
     const openStack = new OpenStack({
-        region_name: 'Region1',
+        region_name: 'RegionOne',
         auth: {
           username: userName,
           password: userPassword,
